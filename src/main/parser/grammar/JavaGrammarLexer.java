@@ -1,4 +1,4 @@
-package main.parser.grammar;// Generated from /home/pc/codestuff/Java-Interpreter/grammar/JavaGrammar.g4 by ANTLR 4.12.0
+package main.parser.grammar;// Generated from C:/code/Java-Interpreter/grammar\JavaGrammar.g4 by ANTLR 4.12.0
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
