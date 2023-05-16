@@ -12,6 +12,7 @@ public class Parser {
     JavaGrammarParser parser;
 
     String tokenString;
+    boolean valid;
 
     public Parser(String input) {
         lexer = new JavaGrammarLexer(CharStreams.fromString(input));
@@ -19,6 +20,7 @@ public class Parser {
         parser = new JavaGrammarParser(tokenStream);
 
         tokenString = "";
+        valid = true;
     }
 
     public String generateTokenString() {
@@ -32,5 +34,10 @@ public class Parser {
 
     public void parse() {
         parser.methode();
+    }
+
+    public boolean isValid() {
+        // do some checks
+        return valid;
     }
 }
