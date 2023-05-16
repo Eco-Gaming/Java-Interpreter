@@ -10,6 +10,6 @@ String input -> Logik -> token[] array output
 
 ## Strategie
 - java framework suchen ?
-  -> ANTLR ([tutorial](https://blog.dgunia.de/2017/10/26/creating-and-testing-an-antlr-parser-with-intellij-idea-or-android-studio/)
+  -> ANTLR ([tutorial](https://blog.dgunia.de/2017/10/26/creating-and-testing-an-antlr-parser-with-intellij-idea-or-android-studio/))
 - String[] typ = {"void","int","String"}
 - String[] 
