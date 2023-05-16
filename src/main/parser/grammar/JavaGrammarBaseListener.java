@@ -1,4 +1,4 @@
-// Generated from /home/erik/codestuff/Java-Interpreter/grammar/JavaGrammar.g4 by ANTLR 4.12.0
+package main.parser.grammar;// Generated from /home/erik/codestuff/Java-Interpreter/grammar/JavaGrammar.g4 by ANTLR 4.12.0
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -11,18 +11,6 @@ import org.antlr.v4.runtime.tree.TerminalNode;
  */
 @SuppressWarnings("CheckReturnValue")
 public class JavaGrammarBaseListener implements JavaGrammarListener {
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterMain(JavaGrammarParser.MainContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitMain(JavaGrammarParser.MainContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -155,42 +143,6 @@ public class JavaGrammarBaseListener implements JavaGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitFaktor(JavaGrammarParser.FaktorContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterVergleichsop(JavaGrammarParser.VergleichsopContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitVergleichsop(JavaGrammarParser.VergleichsopContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterStrichoperator(JavaGrammarParser.StrichoperatorContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitStrichoperator(JavaGrammarParser.StrichoperatorContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterPunktoperator(JavaGrammarParser.PunktoperatorContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitPunktoperator(JavaGrammarParser.PunktoperatorContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

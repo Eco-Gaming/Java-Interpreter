@@ -1,4 +1,4 @@
-// Generated from /home/erik/codestuff/Java-Interpreter/grammar/JavaGrammar.g4 by ANTLR 4.12.0
+package main.parser.grammar;// Generated from /home/erik/codestuff/Java-Interpreter/grammar/JavaGrammar.g4 by ANTLR 4.12.0
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -11,13 +11,6 @@ import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
  */
 @SuppressWarnings("CheckReturnValue")
 public class JavaGrammarBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements JavaGrammarVisitor<T> {
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitMain(JavaGrammarParser.MainContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -95,25 +88,4 @@ public class JavaGrammarBaseVisitor<T> extends AbstractParseTreeVisitor<T> imple
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitFaktor(JavaGrammarParser.FaktorContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitVergleichsop(JavaGrammarParser.VergleichsopContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitStrichoperator(JavaGrammarParser.StrichoperatorContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitPunktoperator(JavaGrammarParser.PunktoperatorContext ctx) { return visitChildren(ctx); }
 }

@@ -1,4 +1,4 @@
-// Generated from /home/erik/codestuff/Java-Interpreter/grammar/JavaGrammar.g4 by ANTLR 4.12.0
+package main.parser.grammar;// Generated from /home/erik/codestuff/Java-Interpreter/grammar/JavaGrammar.g4 by ANTLR 4.12.0
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -9,12 +9,6 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  * operations with no return type.
  */
 public interface JavaGrammarVisitor<T> extends ParseTreeVisitor<T> {
-	/**
-	 * Visit a parse tree produced by {@link JavaGrammarParser#main}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMain(JavaGrammarParser.MainContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link JavaGrammarParser#methode}.
 	 * @param ctx the parse tree
@@ -81,22 +75,4 @@ public interface JavaGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitFaktor(JavaGrammarParser.FaktorContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link JavaGrammarParser#vergleichsop}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitVergleichsop(JavaGrammarParser.VergleichsopContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link JavaGrammarParser#strichoperator}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitStrichoperator(JavaGrammarParser.StrichoperatorContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link JavaGrammarParser#punktoperator}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPunktoperator(JavaGrammarParser.PunktoperatorContext ctx);
 }
