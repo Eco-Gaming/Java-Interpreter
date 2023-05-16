@@ -1,9 +1,10 @@
 # Java-Interpreter
 
 ## TODO
-- implement checking whether input is valid
+- implement checking whether input is valid\n
   -> custom ErrorHandler? (see earlier commits)
 - token IDs and names
+- turn project into maven project?
 
 ## Gerüst
 String input -> Logik -> token[] array output
