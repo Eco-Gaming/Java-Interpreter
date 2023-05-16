@@ -13,16 +13,20 @@ public class GUI {
         b.setBounds(400, 200, 80, 30);
         // creating objects of textfield
         Label l1 = new Label("Enter code here:");
+        Label l2  = new Label("This is the CodeChecker");
 
         l1.setBounds(100,250,120,220);
-
+        l2.setBounds(100,100,200,50);
         TextArea area = new TextArea("");
         area.setBounds(120, 200, 250, 100);
+
+        frame.add(l2);
         frame.add(area);
 
         // adding the components to frame
         frame.add(b);
         frame.add(l1);
+
         frame.setSize(720, 480);
         frame.setLocationRelativeTo(null); // Centers the window
 
