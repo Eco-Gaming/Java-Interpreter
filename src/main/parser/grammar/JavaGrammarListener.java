@@ -1,4 +1,4 @@
-// Generated from /home/pc/codestuff/Java-Interpreter/grammar/JavaGrammar.g4 by ANTLR 4.12.0
+package main.parser.grammar;// Generated from /home/pc/codestuff/Java-Interpreter/grammar/JavaGrammar.g4 by ANTLR 4.12.0
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -6,16 +6,6 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  * {@link JavaGrammarParser}.
  */
 public interface JavaGrammarListener extends ParseTreeListener {
-	/**
-	 * Enter a parse tree produced by {@link JavaGrammarParser#main}.
-	 * @param ctx the parse tree
-	 */
-	void enterMain(JavaGrammarParser.MainContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link JavaGrammarParser#main}.
-	 * @param ctx the parse tree
-	 */
-	void exitMain(JavaGrammarParser.MainContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link JavaGrammarParser#methode}.
 	 * @param ctx the parse tree
@@ -126,34 +116,4 @@ public interface JavaGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitFaktor(JavaGrammarParser.FaktorContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link JavaGrammarParser#vergleichsop}.
-	 * @param ctx the parse tree
-	 */
-	void enterVergleichsop(JavaGrammarParser.VergleichsopContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link JavaGrammarParser#vergleichsop}.
-	 * @param ctx the parse tree
-	 */
-	void exitVergleichsop(JavaGrammarParser.VergleichsopContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link JavaGrammarParser#strichoperator}.
-	 * @param ctx the parse tree
-	 */
-	void enterStrichoperator(JavaGrammarParser.StrichoperatorContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link JavaGrammarParser#strichoperator}.
-	 * @param ctx the parse tree
-	 */
-	void exitStrichoperator(JavaGrammarParser.StrichoperatorContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link JavaGrammarParser#punktoperator}.
-	 * @param ctx the parse tree
-	 */
-	void enterPunktoperator(JavaGrammarParser.PunktoperatorContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link JavaGrammarParser#punktoperator}.
-	 * @param ctx the parse tree
-	 */
-	void exitPunktoperator(JavaGrammarParser.PunktoperatorContext ctx);
 }
