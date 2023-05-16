@@ -1,4 +1,5 @@
 package main.parser.grammar;// Generated from /home/pc/codestuff/Java-Interpreter/grammar/JavaGrammar.g4 by ANTLR 4.12.0
+import main.parser.Parser;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
