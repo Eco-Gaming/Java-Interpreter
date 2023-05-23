@@ -8,7 +8,7 @@ public class Main {
 
         String input = "void main() {\n" +
                 "x = 5;\n" +
-                "";
+                "}";
 
         Parser parser = new Parser(input);
         parser.parse();
@@ -22,5 +22,7 @@ public class Main {
                 System.out.println(error);
             }
         }
+
+        System.out.println(parser.generateTokenList());
     }
 }

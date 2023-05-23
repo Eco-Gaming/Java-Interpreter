@@ -15,7 +15,7 @@ public class Parser {
     CustomErrorListener errorListener;
 
     String tokenString;
-    boolean valid;
+    String tokenList;
 
     public Parser(String input) {
         lexer = new JavaGrammarLexer(CharStreams.fromString(input));
@@ -28,17 +28,33 @@ public class Parser {
         parser.addErrorListener(errorListener);
 
         tokenString = "";
-        valid = true;
+        tokenList = "";
     }
 
     public String generateTokenString() {
         tokenString = "";
         for (int i = 0; i < tokenStream.getNumberOfOnChannelTokens(); i++) {
-            String tokenText = tokenStream.get(i).getType() + ":" + "token-name" + ":" + tokenStream.get(i).getText();
-            tokenString = tokenString + tokenText + "\n";
+            String tokenText = Integer.toString(tokenStream.get(i).getType());
+            if (tokenText.equals("-1")) tokenText = "EOF";
+            tokenString = tokenString + tokenText + "->";
         }
-        tokenString = tokenString.substring(0, tokenString.length()-1);
+        tokenString = tokenString.substring(0, tokenString.length()-2);
         return tokenString;
+    }
+
+    public String generateTokenList() {
+        tokenList = " 1 - KLAMMERAUF     - (\n 2 - KLAMMERZU      - )\n 3 - BLOCKAUF       - {\n 4 - BLOCKZU        - }\n 5 - WENN           - if\n 6 - SONST          - else\n 7 - SOLANGE        - while\n 8 - ZUWEISUNGSOP   - =\n 9 - SEMIKOLON      - ;\n10 - VERGLEICHSOP   - ==,!=,<,>,<=,>=\n11 - STRICHOPERATOR - +,-\n12 - PUNKTOPERATOR  - *,/\n13 - TYP            - void,String,int\n14 - NAME           - [a-z]+\n15 - ZAHL           - [0-9]+";
+        return tokenList;
+    }
+
+    public String generateOldTokenString() {
+        String oldTokenString = "";
+        for (int i = 0; i < tokenStream.getNumberOfOnChannelTokens(); i++) {
+            String tokenText = tokenStream.get(i).getType() + ":" + "token-name" + ":" + tokenStream.get(i).getText();
+            oldTokenString = oldTokenString + tokenText + "\n";
+        }
+        oldTokenString = oldTokenString.substring(0, oldTokenString.length()-1);
+        return oldTokenString;
     }
 
     public void parse() {
