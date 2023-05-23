@@ -9,8 +9,8 @@ import java.awt.Label;
 public class GUI {
     public static void startGUI() {
         Frame frame = new Frame("Application");
-        Button b = new Button("Click Here");
-        b.setBounds(400, 200, 80, 30);
+        Button b = new Button("Test Code for Errors");
+        b.setBounds(400, 200, 120, 30);
         // creating objects of textfield
         Label l1 = new Label("Enter code here:");
         Label l2  = new Label("This is the CodeChecker");
@@ -20,15 +20,19 @@ public class GUI {
         TextArea area = new TextArea("");
         area.setBounds(120, 200, 250, 100);
 
-        frame.add(l2);
-        frame.add(area);
+
 
         // adding the components to frame
+        frame.add(l2);
+        frame.add(area);
         frame.add(b);
         frame.add(l1);
 
         frame.setSize(720, 480);
         frame.setLocationRelativeTo(null); // Centers the window
+
+        //layout
+        frame.setLayout(new GridLayout(3,3));
 
         frame.addWindowListener(new WindowAdapter() {
             @Override
