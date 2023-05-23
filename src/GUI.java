@@ -9,30 +9,43 @@ import java.awt.Label;
 public class GUI {
     public static void startGUI() {
         Frame frame = new Frame("Application");
-        Button b = new Button("Test Code for Errors");
-        b.setBounds(400, 200, 120, 30);
+        Button b1 = new Button("AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
+        Button b2 = new Button("Clear");
+        Button b3 = new Button("Test code");
+
+        TextField t1;
+
         // creating objects of textfield
         Label l1 = new Label("Enter code here:");
-        Label l2  = new Label("This is the CodeChecker");
-
         l1.setBounds(100,250,120,220);
+        Label l2  = new Label("This is the CodeChecker");
         l2.setBounds(100,100,200,50);
-        TextArea area = new TextArea("");
-        area.setBounds(120, 200, 250, 100);
 
+        TextArea area1 = new TextArea("");
+        area1.setBounds(120, 200, 250, 100);
+        TextArea area2 = new TextArea("");
+        area2.setBounds(120, 200, 250, 100);
 
+        t1 = new TextField("Tokenausgabe");
+        t1.setBounds(50, 100, 200, 30);
+        //layout
+        frame.setLayout(new GridLayout(3,3));
 
         // adding the components to frame
-        frame.add(l2);
-        frame.add(area);
-        frame.add(b);
-        frame.add(l1);
-
         frame.setSize(720, 480);
         frame.setLocationRelativeTo(null); // Centers the window
 
-        //layout
-        frame.setLayout(new GridLayout(3,3));
+        // adding the components to frame
+        frame.add(l2);
+        frame.add(l1);
+        frame.add(b3);
+        frame.add(area1);
+        frame.add(area2);
+        frame.add(b2);
+        frame.add(t1);
+        frame.add(b1);
+
+
 
         frame.addWindowListener(new WindowAdapter() {
             @Override
