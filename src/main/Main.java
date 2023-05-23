@@ -1,11 +1,15 @@
-package main;
-
 import main.parser.Parser;
 
 public class Main {
 
     public static void main(String[] args) {
 
+        GUI gui = new GUI();
+        gui.startGUI();
+        String input = "public class Main {\n"
+                + "}";
+        System.out.println(input);
+      
         String input = "void main() {\n" +
                 "x = 5;\n" +
                 "}";
