@@ -8,7 +8,7 @@ public class Main {
 
         String input = "void main() {\n" +
                 "x = 5;\n" +
-                "}";
+                "";
 
         Parser parser = new Parser(input);
         parser.parse();
@@ -16,6 +16,11 @@ public class Main {
         boolean isValid = parser.isValid();
 
         System.out.println(tokenString);
-        System.out.println(isValid);
+
+        if (!isValid) {
+            for (String error : parser.getErrors()) {
+                System.out.println(error);
+            }
+        }
     }
 }
