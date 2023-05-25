@@ -44,14 +44,14 @@ public class GUI {
         gbc.gridy = 2; // row index
         gbc.fill = GridBagConstraints.HORIZONTAL; // allow horizontal resizing
         gbc.gridheight = 2; // occupy two columns
-        gbc.weightx = 1.0; // take up available horizontal space
+        gbc.weightx = 2; // take up available horizontal space
         frame.add(area1, gbc); // add text area area1
 
         gbc.gridx = 1; // column index
         gbc.gridy = 2; // row index
         gbc.fill = GridBagConstraints.HORIZONTAL; // allow horizontal resizing
         gbc.gridheight = 2; // occupy two columns
-        gbc.weightx = 1.0; // take up available horizontal space
+        gbc.weightx = 2; // take up available horizontal space
         frame.add(area2, gbc); // add text area area2
 
         gbc.gridx = 1; // column index
@@ -60,26 +60,28 @@ public class GUI {
         gbc.weightx = 0; // take up available horizontal space
         frame.add(b1, gbc); // add button b2
 
-        gbc.gridx = 2; // column index
-        gbc.gridy = 2; // row
+        gbc.gridx = 1; // column index
+        gbc.gridy = 7; // row
         gbc.gridwidth = 1; // occupy two columns
-        gbc.gridheight = 1; // occupy two columns
+        gbc.gridheight = 2; // occupy two columns
+        gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.weightx = 1; // take up available horizontal space
         gbc.weighty = 0; // take up available horizontal space
         frame.add(b2, gbc); // add button b3
 
-        gbc.gridx = 2; // column index
-        gbc.gridy = 3; // row
+        gbc.gridx = 0; // column index
+        gbc.gridy = 7; // row
         gbc.gridwidth = 1; // occupy two columns
-        gbc.gridheight = 1; // occupy two columns
-        gbc.weightx = 0; // take up available horizontal space
+        gbc.gridheight = 2; // occupy two columns
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.weightx = 1; // take up available horizontal space
         gbc.weighty = 0; // take up available horizontal space
         frame.add(b3, gbc); // add button b3
 
 
         gbc.gridx = 0; // column index
         gbc.gridy = 4; // row index
-        gbc.fill = GridBagConstraints.HORIZONTAL; // allow horizontal resizing
+        gbc.fill = GridBagConstraints.HORIZONTAL;; // allow horizontal resizing
         gbc.weightx = 1.0; // take up available horizontal space
         gbc.gridwidth = 3; // occupy two columns
         frame.add(t1, gbc); // add text field t1
