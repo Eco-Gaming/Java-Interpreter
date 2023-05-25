@@ -18,7 +18,6 @@ public class Main {
         parser.parse();
         String tokenString = parser.generateTokenString();
         boolean isValid = parser.isValid();
-
         System.out.println(tokenString);
 
         if (!isValid) {
