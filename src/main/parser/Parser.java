@@ -5,6 +5,7 @@ import main.parser.grammar.JavaGrammarParser;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Parser {
@@ -15,12 +16,15 @@ public class Parser {
     CustomErrorListener errorListener;
 
     String input;
+    boolean init;
+    boolean parsed;
 
     String tokenString;
     String tokenList;
 
     public Parser() {
-        //
+        init = false;
+        parsed = false;
     }
 
     public void init() {
@@ -38,9 +42,17 @@ public class Parser {
 
         parser.removeErrorListeners();
         parser.addErrorListener(errorListener);
+
+        init = true;
     }
 
     private void generateTokenString() {
+
+        if (!init) {
+            System.err.println("Must initialize Parser before generating tokenString!");
+            return;
+        }
+
         tokenString = "";
         for (int i = 0; i < tokenStream.getNumberOfOnChannelTokens(); i++) {
             String tokenText = Integer.toString(tokenStream.get(i).getType());
@@ -55,7 +67,15 @@ public class Parser {
     }
 
     public void parse() {
+
+        if (!init) {
+            System.err.println("Must initialize Parser before parsing input!");
+            return;
+        }
+
         parser.methode();
+
+        parsed = true;
     }
 
     public String getTokenList() {
@@ -69,10 +89,24 @@ public class Parser {
     }
 
     public boolean isValid() {
+
+        if (!parsed) {
+            System.err.println("Must parse before checking if input is valid!");
+            return false;
+        }
+
         return !errorListener.hasErrors();
     }
 
     public List<String> getErrors() {
+
+        if (!parsed) {
+            System.err.println("Must parse before listing errors!");
+            List<String> list = new ArrayList<>();
+            list.add("Error: input not parsed yet!");
+            return list;
+        }
+
         return errorListener.getErrors();
     }
 
@@ -82,5 +116,8 @@ public class Parser {
 
     public void setInput(String input) {
         this.input = input;
+
+        init = false;
+        parsed = false;
     }
 }
