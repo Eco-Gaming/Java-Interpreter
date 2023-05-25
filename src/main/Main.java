@@ -24,6 +24,8 @@ public class Main {
                 "x = 5;\n" +
                 "}";
 
+        instance.parser.setInput(input);
+        instance.parser.init();
         instance.parser.parse();
 
         String tokenString = instance.parser.getTokenString();
