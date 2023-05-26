@@ -8,6 +8,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import javax.swing.JOptionPane;
+
 public class GUI {
 
     Frame frame;
@@ -145,6 +147,6 @@ public class GUI {
     }
 
     public void clearCode() {
-        //
+        area1.setText("");
     }
 }
