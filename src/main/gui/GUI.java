@@ -3,8 +3,6 @@ package main.gui;
 import main.Main;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -30,7 +28,7 @@ public class GUI {
     public void startGUI() {
         frame = new Frame("Java Interpreter 1.0-SNAPSHOT");
 
-        // creating objects of textfield
+        // creating objects of textField
         l1 = new Label("This is the CodeChecker");
         l2 = new Label("Enter code here:");
         l3 = new Label("All available tokens:");
