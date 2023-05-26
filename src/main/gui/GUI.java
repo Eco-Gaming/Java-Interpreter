@@ -1,5 +1,7 @@
 package main.gui;
 
+import main.Main;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,7 +26,7 @@ public class GUI {
     }
 
     public void startGUI() {
-        frame = new Frame("Application");
+        frame = new Frame("Java Interpreter 1.0-SNAPSHOT");
 
         // creating objects of textfield
         l1 = new Label("Enter code here:");
@@ -37,10 +39,13 @@ public class GUI {
 
         // creating TextArea (multiline TextField)
         area1 = new TextArea("");
-        area2 = new TextArea("");
+        area2 = new TextArea(Main.instance.parser.getTokenList());
+        area2.setEditable(false);
+        area2.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
 
         // creating the smaller TextField
         t1 = new TextField("Tokenausgabe");
+        t1.setEditable(false);
 
         // Set GridBagLayout
         frame.setLayout(new GridBagLayout());
@@ -51,17 +56,17 @@ public class GUI {
         gbc.gridy = 0; // row index
         gbc.fill = GridBagConstraints.HORIZONTAL; // allow horizontal resizing
         gbc.weightx = 1.0; // take up available horizontal space
-        frame.add(l1, gbc); // add label l2
+        frame.add(l2, gbc); // add label l2
 
         // setting constraints for l1
         gbc.gridx = 0; // column index
         gbc.gridy = 1; // row index
         gbc.fill = GridBagConstraints.HORIZONTAL; // allow horizontal resizing
-        frame.add(l2, gbc); // add label l1
+        frame.add(l1, gbc); // add label l1
 
         // setting constraints for area1
         gbc.gridx = 0; // column index
-        gbc.gridy = 4; // row index
+        gbc.gridy = 2; // row index
         gbc.fill = GridBagConstraints.HORIZONTAL; // allow horizontal resizing
         gbc.gridheight = 2; // occupy two columns
         gbc.weightx = 1.0; // take up available horizontal space
@@ -69,7 +74,7 @@ public class GUI {
 
         // setting constraints for area2
         gbc.gridx = 1; // column index
-        gbc.gridy = 4; // row index
+        gbc.gridy = 2; // row index
         gbc.fill = GridBagConstraints.HORIZONTAL; // allow horizontal resizing
         gbc.gridheight = 2; // occupy two columns
         gbc.weightx = 1.0; // take up available horizontal space
@@ -77,7 +82,7 @@ public class GUI {
 
         // setting constraints for b1
         gbc.gridx = 0; // column index
-        gbc.gridy = 2; // row index
+        gbc.gridy = 4; // row index
         gbc.fill = GridBagConstraints.HORIZONTAL; // allow horizontal resizing
         gbc.weightx = 0; // take up available horizontal space
         frame.add(b1, gbc); // add button b2
