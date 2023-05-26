@@ -29,8 +29,8 @@ public class GUI {
         frame = new Frame("Java Interpreter 1.0-SNAPSHOT");
 
         // creating objects of textfield
-        l1 = new Label("Enter code here:");
-        l2 = new Label("This is the CodeChecker");
+        l1 = new Label("This is the CodeChecker");
+        l2 = new Label("Enter code here:");
 
         // creating buttons
         b1 = new Button("Clear");
@@ -51,18 +51,18 @@ public class GUI {
         frame.setLayout(new GridBagLayout());
         gbc = new GridBagConstraints();
 
-        // setting constraints for l2
+        // setting constraints for l1
         gbc.gridx = 0; // column index
         gbc.gridy = 0; // row index
         gbc.fill = GridBagConstraints.HORIZONTAL; // allow horizontal resizing
         gbc.weightx = 1.0; // take up available horizontal space
-        frame.add(l2, gbc); // add label l2
+        frame.add(l1, gbc); // add label l1
 
-        // setting constraints for l1
+        // setting constraints for l2
         gbc.gridx = 0; // column index
         gbc.gridy = 1; // row index
         gbc.fill = GridBagConstraints.HORIZONTAL; // allow horizontal resizing
-        frame.add(l1, gbc); // add label l1
+        frame.add(l2, gbc); // add label l2
 
         // setting constraints for area1
         gbc.gridx = 0; // column index
