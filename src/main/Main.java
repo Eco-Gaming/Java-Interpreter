@@ -1,5 +1,6 @@
 package main;
 
+import main.gui.GUI;
 import main.parser.Parser;
 
 public class Main {
