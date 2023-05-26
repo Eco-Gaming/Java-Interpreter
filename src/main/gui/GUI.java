@@ -147,6 +147,7 @@ public class GUI {
     }
 
     public void clearCode() {
+        JOptionPane.showConfirmDialog(frame, "Are you sure?");
         area1.setText("");
     }
 }
