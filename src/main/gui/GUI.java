@@ -1,10 +1,14 @@
 package main.gui;
 
 import main.Main;
+import main.gui.listeners.ClearCodeActionListener;
+import main.gui.listeners.ScanCodeActionListener;
 
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+
+import javax.swing.JOptionPane;
 
 public class GUI {
 
@@ -37,7 +41,9 @@ public class GUI {
 
         // creating buttons
         b1 = new Button("Clear");
+        b1.addActionListener(new ClearCodeActionListener());
         b2 = new Button("Scan code");
+        b2.addActionListener(new ScanCodeActionListener());
         b3 = new Button("Parse code");
 
         // creating TextArea (multiline TextField)
@@ -145,7 +151,9 @@ public class GUI {
     }
 
     public void scanCode() {
-        //
+        Main.instance.parser.setInput(area1.getText());
+        Main.instance.parser.init();
+        t1.setText(Main.instance.parser.getTokenString());
     }
 
     public void parseCode() {
@@ -153,6 +161,8 @@ public class GUI {
     }
 
     public void clearCode() {
-        //
+        if (JOptionPane.showConfirmDialog(frame, "Are you sure?") < 1) {
+            area1.setText("");
+        }
     }
 }
