@@ -2,6 +2,7 @@ package main.gui;
 
 import main.Main;
 import main.gui.listeners.ClearCodeActionListener;
+import main.gui.listeners.ParseCodeActionListener;
 import main.gui.listeners.ScanCodeActionListener;
 
 import java.awt.*;
@@ -45,6 +46,7 @@ public class GUI {
         b2 = new Button("Scan code");
         b2.addActionListener(new ScanCodeActionListener());
         b3 = new Button("Parse code");
+        b3.addActionListener(new ParseCodeActionListener());
 
         // creating TextArea (multiline TextField)
         area1 = new TextArea("");
@@ -157,7 +159,12 @@ public class GUI {
     }
 
     public void parseCode() {
-        //
+        Main.instance.parser.parse();
+        if (Main.instance.parser.isValid()) {
+            System.out.println("Success!");
+        } else {
+            System.out.println("Not Success!");
+        }
     }
 
     public void clearCode() {
