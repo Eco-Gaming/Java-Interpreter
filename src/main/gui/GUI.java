@@ -170,7 +170,7 @@ public class GUI {
         if (Main.instance.parser.isValid()) {
             JOptionPane.showMessageDialog(frame, "Code parsed successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            int state = JOptionPane.showConfirmDialog(frame, "Failed parsing code! Show error(s)?", "Failed", JOptionPane.ERROR_MESSAGE, JOptionPane.OK_CANCEL_OPTION);
+            int state = JOptionPane.showConfirmDialog(frame, "Failed parsing code! Show error(s)?", "Failed", JOptionPane.OK_CANCEL_OPTION, JOptionPane.ERROR_MESSAGE);
             if (state == 0) showErrors();
         }
     }
