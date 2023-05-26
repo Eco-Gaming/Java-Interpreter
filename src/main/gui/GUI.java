@@ -14,6 +14,7 @@ public class GUI {
     GridBagConstraints gbc;
     Label l1;
     Label l2;
+    Label l3;
     Button b1;
     Button b2;
     Button b3;
@@ -31,6 +32,7 @@ public class GUI {
         // creating objects of textfield
         l1 = new Label("This is the CodeChecker");
         l2 = new Label("Enter code here:");
+        l3 = new Label("All available tokens:");
 
         // creating buttons
         b1 = new Button("Clear");
@@ -63,6 +65,12 @@ public class GUI {
         gbc.gridy = 1; // row index
         gbc.fill = GridBagConstraints.HORIZONTAL; // allow horizontal resizing
         frame.add(l2, gbc); // add label l2
+
+        // setting constraints for l3
+        gbc.gridx = 1; // column index
+        gbc.gridy = 1; // row index
+        gbc.fill = GridBagConstraints.HORIZONTAL; // allow horizontal resizing
+        frame.add(l3, gbc); // add label l3
 
         // setting constraints for area1
         gbc.gridx = 0; // column index
@@ -126,5 +134,17 @@ public class GUI {
             }
         });
         frame.setVisible(true);
+    }
+
+    public void scanCode() {
+        //
+    }
+
+    public void parseCode() {
+        //
+    }
+
+    public void clearCode() {
+        //
     }
 }
