@@ -141,7 +141,9 @@ public class GUI {
     }
 
     public void scanCode() {
-        //
+        instance.parser.setInput(input);
+        instance.parser.init();
+        t1.setText(instance.parser.getTokenString());
     }
 
     public void parseCode() {
