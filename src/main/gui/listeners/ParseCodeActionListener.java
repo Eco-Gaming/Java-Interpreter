@@ -3,10 +3,10 @@ package main.gui.listeners;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ScanCodeActionListener implements ActionListener {
+public class ParseCodeActionListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Main.instance.gui.scanCode();
+        Main.instance.gui.parseCode();
     }
 }
