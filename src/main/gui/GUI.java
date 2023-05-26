@@ -9,7 +9,7 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class GUI {
 
@@ -26,8 +26,10 @@ public class GUI {
     TextArea area2;
     TextField t1;
 
+    boolean scanned;
+
     public GUI() {
-        //
+        scanned = false;
     }
 
     public void startGUI() {
@@ -38,7 +40,6 @@ public class GUI {
         l2 = new Label("Enter code here:");
         l3 = new Label("All available tokens:");
         l4 = new Label("Token output:");
-
 
         // creating buttons
         b1 = new Button("Clear");
@@ -129,8 +130,6 @@ public class GUI {
         gbc.weighty = 0; // take up available horizontal space
         frame.add(b3, gbc); // add button b3
 
-
-
         // setting constraints for t1
         gbc.gridx = 0; // column index
         gbc.gridy = 7; // row index
@@ -156,20 +155,35 @@ public class GUI {
         Main.instance.parser.setInput(area1.getText());
         Main.instance.parser.init();
         t1.setText(Main.instance.parser.getTokenString());
+
+        area1.setEditable(false);
+        scanned = true;
     }
 
     public void parseCode() {
+        if (!scanned) {
+            JOptionPane.showMessageDialog(frame, "The code must be scanned before parsing!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         Main.instance.parser.parse();
         if (Main.instance.parser.isValid()) {
-            System.out.println("Success!");
+            JOptionPane.showMessageDialog(frame, "Code parsed successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            System.out.println("Not Success!");
+            int state = JOptionPane.showConfirmDialog(frame, "Failed parsing code! Show error(s)?", "Failed", JOptionPane.ERROR_MESSAGE, JOptionPane.OK_CANCEL_OPTION);
+            if (state == 0) showErrors();
         }
     }
 
     public void clearCode() {
-        if (JOptionPane.showConfirmDialog(frame, "Are you sure?") < 1) {
+        if (JOptionPane.showConfirmDialog(frame, "Are you sure you want to clear the code field?", "Confirm", JOptionPane.OK_CANCEL_OPTION) < 1) {
             area1.setText("");
+            area1.setEditable(true);
+            scanned = false;
         }
+    }
+
+    private void showErrors() {
+        //
     }
 }
