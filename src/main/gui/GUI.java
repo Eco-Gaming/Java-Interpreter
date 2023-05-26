@@ -1,6 +1,7 @@
 package main.gui;
 
 import main.Main;
+import main.gui.listeners.ClearCodeActionListener;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -38,6 +39,7 @@ public class GUI {
 
         // creating buttons
         b1 = new Button("Clear");
+        b1.addActionListener(new ClearCodeActionListener());
         b2 = new Button("Parse code");
         b3 = new Button("Scan code");
 
@@ -147,7 +149,8 @@ public class GUI {
     }
 
     public void clearCode() {
-        JOptionPane.showConfirmDialog(frame, "Are you sure?");
-        area1.setText("");
+        if (JOptionPane.showConfirmDialog(frame, "Are you sure?") < 1) {
+            area1.setText("");
+        }
     }
 }
