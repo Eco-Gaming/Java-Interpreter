@@ -7,39 +7,59 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class GUI {
-    public static void startGUI() {
-        Frame frame = new Frame("Application");
-        Button b1 = new Button("Clear");
-        Button b2 = new Button("Parse code");
-        Button b3 = new Button("Scan code");
+
+    Frame frame;
+    GridBagConstraints gbc;
+    Label l1;
+    Label l2;
+    Button b1;
+    Button b2;
+    Button b3;
+    TextArea area1;
+    TextArea area2;
+    TextField t1;
+
+    public GUI() {
+        //
+    }
+
+    public void startGUI() {
+        frame = new Frame("Application");
 
         // creating objects of textfield
-        Label l1 = new Label("Enter code here:");
-        Label l2 = new Label("This is the CodeChecker");
+        l1 = new Label("Enter code here:");
+        l2 = new Label("This is the CodeChecker");
 
-        TextArea area1 = new TextArea("");
-        TextArea area2 = new TextArea("");
+        // creating buttons
+        b1 = new Button("Clear");
+        b2 = new Button("Parse code");
+        b3 = new Button("Scan code");
 
-        TextField t1 = new TextField("Tokenausgabe");
+        // creating TextArea (multiline TextField)
+        area1 = new TextArea("");
+        area2 = new TextArea("");
+
+        // creating the smaller TextField
+        t1 = new TextField("Tokenausgabe");
 
         // Set GridBagLayout
         frame.setLayout(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
+        gbc = new GridBagConstraints();
 
+        // setting constraints for l2
         gbc.gridx = 0; // column index
         gbc.gridy = 0; // row index
         gbc.fill = GridBagConstraints.HORIZONTAL; // allow horizontal resizing
         gbc.weightx = 1.0; // take up available horizontal space
         frame.add(l2, gbc); // add label l2
 
+        // setting constraints for l1
         gbc.gridx = 0; // column index
         gbc.gridy = 1; // row index
         gbc.fill = GridBagConstraints.HORIZONTAL; // allow horizontal resizing
         frame.add(l1, gbc); // add label l1
 
-
-
-
+        // setting constraints for area1
         gbc.gridx = 0; // column index
         gbc.gridy = 2; // row index
         gbc.fill = GridBagConstraints.HORIZONTAL; // allow horizontal resizing
@@ -47,6 +67,7 @@ public class GUI {
         gbc.weightx = 2; // take up available horizontal space
         frame.add(area1, gbc); // add text area area1
 
+        // setting constraints for area2
         gbc.gridx = 1; // column index
         gbc.gridy = 2; // row index
         gbc.fill = GridBagConstraints.HORIZONTAL; // allow horizontal resizing
@@ -54,12 +75,14 @@ public class GUI {
         gbc.weightx = 2; // take up available horizontal space
         frame.add(area2, gbc); // add text area area2
 
+        // setting constraints for b1
         gbc.gridx = 1; // column index
         gbc.gridy = 1; // row index
         gbc.fill = GridBagConstraints.HORIZONTAL; // allow horizontal resizing
         gbc.weightx = 0; // take up available horizontal space
         frame.add(b1, gbc); // add button b2
 
+        // setting constraints for b3
         gbc.gridx = 1; // column index
         gbc.gridy = 7; // row
         gbc.gridwidth = 1; // occupy two columns
@@ -69,6 +92,7 @@ public class GUI {
         gbc.weighty = 0; // take up available horizontal space
         frame.add(b2, gbc); // add button b3
 
+        // setting constraints for b3
         gbc.gridx = 0; // column index
         gbc.gridy = 7; // row
         gbc.gridwidth = 1; // occupy two columns
@@ -78,7 +102,7 @@ public class GUI {
         gbc.weighty = 0; // take up available horizontal space
         frame.add(b3, gbc); // add button b3
 
-
+        // setting constraints for t1
         gbc.gridx = 0; // column index
         gbc.gridy = 4; // row index
         gbc.fill = GridBagConstraints.HORIZONTAL;; // allow horizontal resizing
@@ -86,7 +110,7 @@ public class GUI {
         gbc.gridwidth = 3; // occupy two columns
         frame.add(t1, gbc); // add text field t1
 
-
+        // setting size and location of frame
         frame.setSize(720, 480);
         frame.setLocationRelativeTo(null); // Centers the window
 
@@ -98,5 +122,4 @@ public class GUI {
         });
         frame.setVisible(true);
     }
-
 }
