@@ -2,10 +2,9 @@ package main.gui;
 
 import main.Main;
 import main.gui.listeners.ClearCodeActionListener;
+import main.gui.listeners.ScanCodeActionListener;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -40,8 +39,9 @@ public class GUI {
         // creating buttons
         b1 = new Button("Clear");
         b1.addActionListener(new ClearCodeActionListener());
-        b2 = new Button("Parse code");
-        b3 = new Button("Scan code");
+        b2 = new Button("Scan code");
+        b2.addActionListener(new ScanCodeActionListener());
+        b3 = new Button("Parse code");
 
         // creating TextArea (multiline TextField)
         area1 = new TextArea("");
@@ -141,9 +141,9 @@ public class GUI {
     }
 
     public void scanCode() {
-        instance.parser.setInput(input);
-        instance.parser.init();
-        t1.setText(instance.parser.getTokenString());
+        Main.instance.parser.setInput(area1.getText());
+        Main.instance.parser.init();
+        t1.setText(Main.instance.parser.getTokenString());
     }
 
     public void parseCode() {
