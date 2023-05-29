@@ -4,6 +4,7 @@ import main.Main;
 import main.gui.listeners.ClearCodeActionListener;
 import main.gui.listeners.ParseCodeActionListener;
 import main.gui.listeners.ScanCodeActionListener;
+import main.gui.listeners.TextChangedListener;
 
 import java.awt.*;
 import java.awt.event.WindowAdapter;
@@ -27,6 +28,7 @@ public class GUI {
     TextField t1;
 
     boolean scanned;
+    String input;
 
     public GUI() {
         scanned = false;
@@ -49,11 +51,15 @@ public class GUI {
         b3 = new Button("Parse code");
         b3.addActionListener(new ParseCodeActionListener());
 
+        Font monospaceFont = new Font(Font.MONOSPACED, Font.PLAIN, 12);
+
         // creating TextArea (multiline TextField)
         area1 = new TextArea("");
+        area1.addTextListener(new TextChangedListener());
+        area1.setFont(monospaceFont);
         area2 = new TextArea(Main.instance.parser.getTokenList());
         area2.setEditable(false);
-        area2.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
+        area2.setFont(monospaceFont);
 
         // creating the smaller TextField
         t1 = new TextField("");
@@ -152,12 +158,19 @@ public class GUI {
     }
 
     public void scanCode() {
-        Main.instance.parser.setInput(area1.getText());
-        Main.instance.parser.init();
-        t1.setText(Main.instance.parser.getTokenString());
+        input = area1.getText();
 
-        area1.setEditable(false);
+        Main.instance.parser.setInput(input);
+        Main.instance.parser.init();
+
+        t1.setText(Main.instance.parser.getTokenString());
         scanned = true;
+    }
+
+    public void codeChanged() {
+        if (!area1.getText().equals(input)) {
+            scanned = false;
+        }
     }
 
     public void parseCode() {
@@ -178,12 +191,15 @@ public class GUI {
     public void clearCode() {
         if (JOptionPane.showConfirmDialog(frame, "Are you sure you want to clear the code field?", "Confirm", JOptionPane.OK_CANCEL_OPTION) < 1) {
             area1.setText("");
-            area1.setEditable(true);
             scanned = false;
         }
     }
 
     private void showErrors() {
-        //
+        // Convert the error list to a single string with line breaks
+        String errorText = String.join("\n", Main.instance.parser.getErrors());
+
+        // Show the error dialog
+        JOptionPane.showMessageDialog(frame, errorText, "Error List", JOptionPane.ERROR_MESSAGE);
     }
 }
