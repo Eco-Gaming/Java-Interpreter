@@ -1,7 +1,7 @@
-package main.parser;
+package org.example.javainterpreter.parser;
 
-import main.parser.grammar.JavaGrammarLexer;
-import main.parser.grammar.JavaGrammarParser;
+import org.example.javainterpreter.parser.grammar.JavaGrammarLexer;
+import org.example.javainterpreter.parser.grammar.JavaGrammarParser;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 

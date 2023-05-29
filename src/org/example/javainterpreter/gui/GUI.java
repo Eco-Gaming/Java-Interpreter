@@ -1,10 +1,10 @@
-package main.gui;
+package org.example.javainterpreter.gui;
 
-import main.Main;
-import main.gui.listeners.ClearCodeActionListener;
-import main.gui.listeners.ParseCodeActionListener;
-import main.gui.listeners.ScanCodeActionListener;
-import main.gui.listeners.TextChangedListener;
+import org.example.javainterpreter.Main;
+import org.example.javainterpreter.gui.listeners.ClearCodeActionListener;
+import org.example.javainterpreter.gui.listeners.ParseCodeActionListener;
+import org.example.javainterpreter.gui.listeners.ScanCodeActionListener;
+import org.example.javainterpreter.gui.listeners.TextChangedListener;
 
 import java.awt.*;
 import java.awt.event.WindowAdapter;
