@@ -193,6 +193,10 @@ public class GUI {
     }
 
     private void showErrors() {
-        //
+        // Convert the error list to a single string with line breaks
+        String errorText = String.join("\n", Main.instance.parser.getErrors());
+
+        // Show the error dialog
+        JOptionPane.showMessageDialog(frame, errorText, "Error List", JOptionPane.ERROR_MESSAGE);
     }
 }
