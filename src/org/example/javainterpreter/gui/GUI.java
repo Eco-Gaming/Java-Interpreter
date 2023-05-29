@@ -32,8 +32,8 @@ public class GUI {
     boolean scanned;
     String input;
 
-    public GUI() {
-        javaInterpreter = JavaInterpreter.instance;
+    public GUI(JavaInterpreter javaInterpreter) {
+        this.javaInterpreter = javaInterpreter;
         scanned = false;
     }
 

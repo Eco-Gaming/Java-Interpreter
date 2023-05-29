@@ -12,7 +12,7 @@ public class JavaInterpreter {
 
     public JavaInterpreter() {
         parser = new Parser();
-        gui = new GUI();
+        gui = new GUI(this);
     }
 
     public static void main(String[] args) {
