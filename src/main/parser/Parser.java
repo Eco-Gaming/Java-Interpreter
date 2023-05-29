@@ -73,7 +73,7 @@ public class Parser {
             return;
         }
 
-        parser.methode();
+        if (!parsed) parser.methode();
 
         parsed = true;
     }
