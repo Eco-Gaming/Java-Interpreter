@@ -1,6 +1,6 @@
-package main.gui.listeners;
+package org.example.javainterpreter.gui.listeners;
 
-import main.Main;
+import org.example.javainterpreter.Main;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

@@ -1,7 +1,7 @@
-package main;
+package org.example.javainterpreter;
 
-import main.gui.GUI;
-import main.parser.Parser;
+import org.example.javainterpreter.gui.GUI;
+import org.example.javainterpreter.parser.Parser;
 
 public class Main {
 
