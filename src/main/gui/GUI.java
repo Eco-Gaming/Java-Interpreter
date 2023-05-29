@@ -51,12 +51,15 @@ public class GUI {
         b3 = new Button("Parse code");
         b3.addActionListener(new ParseCodeActionListener());
 
+        Font monospaceFont = new Font(Font.MONOSPACED, Font.PLAIN, 12);
+
         // creating TextArea (multiline TextField)
         area1 = new TextArea("");
         area1.addTextListener(new TextChangedListener());
+        area1.setFont(monospaceFont);
         area2 = new TextArea(Main.instance.parser.getTokenList());
         area2.setEditable(false);
-        area2.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
+        area2.setFont(monospaceFont);
 
         // creating the smaller TextField
         t1 = new TextField("");
