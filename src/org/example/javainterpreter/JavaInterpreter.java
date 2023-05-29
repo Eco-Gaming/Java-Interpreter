@@ -3,20 +3,20 @@ package org.example.javainterpreter;
 import org.example.javainterpreter.gui.GUI;
 import org.example.javainterpreter.parser.Parser;
 
-public class Main {
+public class JavaInterpreter {
 
-    public static Main instance;
+    public static JavaInterpreter instance;
 
     public Parser parser;
     public GUI gui;
 
-    public Main() {
+    public JavaInterpreter() {
         parser = new Parser();
         gui = new GUI();
     }
 
     public static void main(String[] args) {
-        instance = new Main();
+        instance = new JavaInterpreter();
 
         instance.gui.startGUI();
     }

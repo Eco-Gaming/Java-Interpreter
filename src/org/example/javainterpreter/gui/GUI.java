@@ -1,6 +1,6 @@
 package org.example.javainterpreter.gui;
 
-import org.example.javainterpreter.Main;
+import org.example.javainterpreter.JavaInterpreter;
 import org.example.javainterpreter.gui.listeners.ClearCodeActionListener;
 import org.example.javainterpreter.gui.listeners.ParseCodeActionListener;
 import org.example.javainterpreter.gui.listeners.ScanCodeActionListener;
@@ -13,6 +13,8 @@ import java.awt.event.WindowEvent;
 import javax.swing.*;
 
 public class GUI {
+
+    JavaInterpreter javaInterpreter;
 
     Frame frame;
     GridBagConstraints gbc;
@@ -31,6 +33,7 @@ public class GUI {
     String input;
 
     public GUI() {
+        javaInterpreter = JavaInterpreter.instance;
         scanned = false;
     }
 
@@ -57,7 +60,7 @@ public class GUI {
         area1 = new TextArea("");
         area1.addTextListener(new TextChangedListener());
         area1.setFont(monospaceFont);
-        area2 = new TextArea(Main.instance.parser.getTokenList());
+        area2 = new TextArea(javaInterpreter.parser.getTokenList());
         area2.setEditable(false);
         area2.setFont(monospaceFont);
 
@@ -160,10 +163,10 @@ public class GUI {
     public void scanCode() {
         input = area1.getText();
 
-        Main.instance.parser.setInput(input);
-        Main.instance.parser.init();
+        javaInterpreter.parser.setInput(input);
+        javaInterpreter.parser.init();
 
-        t1.setText(Main.instance.parser.getTokenString());
+        t1.setText(javaInterpreter.parser.getTokenString());
         scanned = true;
     }
 
@@ -179,8 +182,8 @@ public class GUI {
             return;
         }
 
-        Main.instance.parser.parse();
-        if (Main.instance.parser.isValid()) {
+        javaInterpreter.parser.parse();
+        if (javaInterpreter.parser.isValid()) {
             JOptionPane.showMessageDialog(frame, "Code parsed successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
         } else {
             int state = JOptionPane.showConfirmDialog(frame, "Failed parsing code! Show error(s)?", "Failed", JOptionPane.OK_CANCEL_OPTION, JOptionPane.ERROR_MESSAGE);
@@ -197,7 +200,7 @@ public class GUI {
 
     private void showErrors() {
         // Convert the error list to a single string with line breaks
-        String errorText = String.join("\n", Main.instance.parser.getErrors());
+        String errorText = String.join("\n", javaInterpreter.parser.getErrors());
 
         // Show the error dialog
         JOptionPane.showMessageDialog(frame, errorText, "Error List", JOptionPane.ERROR_MESSAGE);
