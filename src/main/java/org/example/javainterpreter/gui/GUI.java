@@ -172,6 +172,7 @@ public class GUI {
 
     public void codeChanged() {
         if (!area1.getText().equals(input)) {
+            t1.setText("");
             scanned = false;
         }
     }
