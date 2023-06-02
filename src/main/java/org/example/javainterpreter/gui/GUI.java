@@ -38,7 +38,7 @@ public class GUI {
     }
 
     public void startGUI() {
-        frame = new Frame("Java Interpreter 1.0-SNAPSHOT");
+        frame = new Frame("Java Interpreter 1.0.0");
 
         // creating objects of textField
         l1 = new Label("This is the CodeChecker");
