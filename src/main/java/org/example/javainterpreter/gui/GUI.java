@@ -148,7 +148,9 @@ public class GUI {
         frame.add(t1, gbc); // add text field t1
 
         // setting size and location of frame
-        frame.setSize(720, 480);
+        Dimension windowDimension = new Dimension(720, 320);
+        frame.setSize(windowDimension);
+        frame.setMinimumSize(windowDimension);
         frame.setLocationRelativeTo(null); // Centers the window
 
         frame.addWindowListener(new WindowAdapter() {
