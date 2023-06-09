@@ -43,6 +43,9 @@ public class Parser {
         parser.removeErrorListeners();
         parser.addErrorListener(errorListener);
 
+        tokenString = null;
+        tokenList = null;
+
         init = true;
     }
 
