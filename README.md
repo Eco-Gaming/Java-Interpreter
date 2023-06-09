@@ -1,21 +1,10 @@
 # Java-Interpreter
 
-## TODO
-- implement checking whether input is valid\n
-  -> custom ErrorHandler? (see earlier commits)
-- token IDs and names
-- turn project into maven project?
+This is a very basic Java Interpreter, based on the grammar file in grammar/JavaGrammar.g4.
+Currently names can only consist of lowercase letters, and only `void`, `String` and `int` types are accepted.
 
-## Gerüst
-String input -> Logik -> token[] array output
+This project was made as part of a computer science class in 2023.
 
-## Aufgaben
-- token mit grammatik speichern
-- input string in "worte" aufteilen
-- "worte" zu token
+## Credits
 
-## Strategie
-- java framework suchen ?
-  -> ANTLR ([tutorial](https://blog.dgunia.de/2017/10/26/creating-and-testing-an-antlr-parser-with-intellij-idea-or-android-studio/))
-- String[] typ = {"void","int","String"}
-- String[] 
+- [ANTLR](https://www.antlr.org/) is used for scanning and parsing the input.
